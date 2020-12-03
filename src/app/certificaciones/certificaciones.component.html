@@ -1,0 +1,47 @@
+<div class="main-div">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap" rel="stylesheet">
+    
+        <p align="center" style="font-size: 32px;  font-family: 'Marcellus SC',serif;">Certificaciones enviadas</p>
+        <br>
+        <div class="row" >
+            <div class="col-auto"*ngFor="let c of certificaciones">
+                
+                <div class="card" style="width: 60rem; border-radius: 10px; border:1px solid #E85F5C; height:150px" >
+                
+                    <div class="card-block">
+                        <div class="row">
+                            <div class="col">
+                                    <ul class="list-group list-group-flush align-items-start">
+                                        <br>
+                                        <!--<span *ngFor="let u of usuarios">-->
+                                        <p class="card-title" style="font-size: 21px; margin-left: 20px">{{c.user.nombre}} </p>
+                                        <h5 class="card-title" style="margin-left: 20px">{{c.categoria.nombre}}</h5>
+                                        <h5 class="card-title" style="margin-left: 20px">{{c.descripcion}} </h5>
+                                        <!--<button class="btn btn-danger"style="width:150px;">Ver PDF</button>-->
+                                    </ul>
+                                </div>
+                                <ul class="list-group list-group-flush align-items-end">
+                                    <div class="col">
+                                        <button class="btn btn-danger"style="width:150px; height:85px; margin-top: 25px; margin-botton: 5px"><a style="text-decoration: none; color: white;"
+                                            [href]="c.docref " target=”_blank”>Ver PDF</a></button>
+                                    </div>
+                                </ul>
+
+                                <div class="col"> 
+                                        <ul class="list-group list-group-flush align-items-start">
+                                            <button class="btn btn-primary "style="width:150px; margin-top: 20px; " (click)="updateStatus(c.id,'aprobado')">Verificar</button>
+                                            <br>
+                                            <button class="btn btn-danger"style="width:150px; padding-botton: 20px;" (click)="updateStatus(c.id,'denegado')">Denegar</button>    
+                                        </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                </div>
+            
+                <br><br>
+            </div>  
+            
+        </div>
+        
+<div class="main-div"></div>

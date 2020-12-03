@@ -1,0 +1,35 @@
+.main-div{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    align-items: center;
+
+  }
+  .button {
+    color: #ffffff;
+    background-color:#DD6031;
+    text-decoration: none;
+    width:600px; 
+    height:100px;
+    font-size: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: inline-block;
+    border-radius: 10px;
+    outline:none;
+    border: 0;
+    line-height: 70px
+  }
+  .select {
+    right: 0;
+    position: absolute;
+}
+.lista{
+  width:auto; 
+  height:auto;
+    border:2px solid orangered;
+    border-radius:22px;
+ 
+}

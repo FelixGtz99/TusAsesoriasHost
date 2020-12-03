@@ -1,0 +1,36 @@
+<div class="register">
+  <mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)">
+
+    <mat-grid-tile>
+      <div class="w-100">
+        <h1>INSCRÍBETE</h1>
+        <h3>Completa el siguiente formulario</h3>
+        <form action="" [formGroup]="formSesiones">
+          <mat-form-field appearance="fill" class="button">
+            <mat-label>Cantidad de sesiones</mat-label>
+            <input matInput type="number" min="1" max="5" oninput="validity.valid||(value='1');"
+              formControlName="sesiones">
+          </mat-form-field>
+          <br>
+          <button mat-flat-button color="accent" (click)="openDialog()" class="button">Seleccionar Sesiones</button>
+        </form>
+
+      </div>
+
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div class="w-100">
+        <img [src]="curso.user.img" width="200" height="200" class="rounded"
+          alt="https://cdn.jpegmini.com/user/images/slider_puffin_before_mobile.jpg">
+
+        <h5>{{curso.user.nombre}} </h5>
+        <!-- <h5 >{{curso.categoria.nombre}} </h5> -->
+        <h5>{{curso.tarifa | currency}} </h5>
+        <ngb-rating [(rate)]="curso.evaluaciones" [readonly]="true" [max]=5 style="font-size: 3rem"></ngb-rating>
+        <!-- <h4>Logros</h4> -->
+        <!-- <button mat-raised-button color="primary" class="button select" (click)="pagar()">Siguiente</button> -->
+      </div>
+
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

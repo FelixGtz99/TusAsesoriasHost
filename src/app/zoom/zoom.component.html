@@ -1,0 +1,54 @@
+<div class="main-div container">
+    <!-- Crear if para que solo te deje si tienes clase -->
+<!-- Parte visivle para el alumno -->
+    <span *ngIf="usuario.tipoUsuario=='alumno'">
+        <span *ngIf="isVisible_A">
+
+            <form class="example-form" [formGroup]="formDatos">
+                <mat-form-field class="example-full-width" style="width: 250px;">
+                    <mat-label>Numero de llamada</mat-label>
+                    <input matInput #message maxlength="11" placeholder="Numero" formControlName="numero">
+                    <mat-hint align="start"><strong>Por favor introduzca el numero</strong> </mat-hint>
+                    <mat-hint align="end">{{message.value.length}} / 11</mat-hint>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" style="width: 250px;">
+                    <mat-label>Inserte la contraseña</mat-label>
+                    <input matInput #message2 maxlength="6" placeholder="Contraseña" formControlName="contraseña">
+                    <mat-hint align="start"><strong>Por favor introduzca la contraseña</strong> </mat-hint>
+                    <mat-hint align="end">{{message2.value.length}} / 6</mat-hint>
+                </mat-form-field>
+                <button (click)="getSignature()" [disabled]="formDatos.invalid" style="font-size: 16px;">Entrar</button>
+
+            </form>
+        </span>
+        <span *ngIf="!isVisible_A">
+
+            <h2>No cuentas con ninguna clase en esta hora</h2>
+        </span>
+    </span>
+
+
+
+<!-- Parte visible para el instructor -->
+    <div class="text-center">
+        <span *ngIf="usuario.tipoUsuario=='instructor'">
+            <span *ngIf="isVisible_I">
+
+                <button class="center-block"><a style="text-decoration: none; color: white; font-size: 19px;"
+                        href="https://us04web.zoom.us/start/videomeeting " target=”_blank”>Crear Reunion </a></button>
+                <br>
+                <br>
+                <a style=" text-align: center; margin-top: 180px;">Inicializa una sesión virtual para ponerte en
+                    contacto con alguno de tus estudiantes.</a>
+
+            </span>
+            <span *ngIf="!isVisible_I">
+
+                <h2>No cuentas con ninguna clase en esta hora.</h2>
+            </span>
+
+        </span>
+    </div>
+
+
+</div>

@@ -1,0 +1,26 @@
+.tabla{
+  display: block;
+    height:500px;
+    width:700px;
+    overflow:scroll;
+}
+
+mat-header-cell {
+    word-wrap: initial;
+    display: table-cell;
+    padding: 0px 5px;
+    line-break: unset;
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    vertical-align: middle;
+}
+.register {
+  padding: 10px;
+  max-width: 1024px;
+  margin: 0 auto;
+  font-size: 20px;
+  text-align: justify;
+
+  display: block;
+}

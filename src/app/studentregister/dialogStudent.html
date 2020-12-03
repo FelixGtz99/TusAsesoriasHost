@@ -1,0 +1,111 @@
+<div>{{titulo}}</div>
+<mat-grid-list cols="8" rowHeight="1:2">
+  <mat-grid-tile>
+
+    <mat-list>
+      <mat-list-item>Lunes</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngFor="let item of clunes; let i = index">
+        <button mat-stroked-button color="warn" (click)="horaClick(item,1,'lunes',i)"
+          [ngClass]="{'active' : this.tlunes[i], 'inactive' : !this.tlunes[i]}">
+          {{item}}
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-grid-tile>
+  <mat-grid-tile>
+
+    <mat-list>
+      <mat-list-item>Martes</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngFor="let item of cmartes;let i=index">
+        <button mat-stroked-button color="warn" (click)="horaClick(item,2,'martes',i)"
+          [ngClass]="{'active' : this.tmartes[i], 'inactive' : !this.tmartes[i]}">
+          {{item}}
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-grid-tile>
+  <mat-grid-tile>
+
+    <mat-list>
+      <mat-list-item>Miercoles</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngFor="let item of cmiercoles;let i=index">
+        <button mat-stroked-button color="warn" (click)="horaClick(item,3,'miercoles',i)"
+          [ngClass]="{'active' : this.tmiercoles[i], 'inactive' : !this.tmiercoles[i]}">
+          {{item}}
+        </button>
+      </mat-list-item>
+
+    </mat-list>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+
+    <mat-list>
+      <mat-list-item>Jueves</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngFor="let item of cjueves;let i=index">
+        <button mat-stroked-button color="warn" (click)="horaClick(item,4,'jueves',i)"
+          [ngClass]="{'active' : this.tjueves[i], 'inactive' : !this.tjueves[i]}">
+          {{item}}
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+
+    <mat-list>
+      <mat-list-item>Viernes</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngFor="let item of cviernes;let i=index">
+        <button mat-stroked-button color="warn" (click)="horaClick(item,5,'viernes',i)"
+          [ngClass]="{'active' : this.tviernes[i], 'inactive' : !this.tviernes[i]}">
+          {{item}}
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+
+    <mat-list>
+      <mat-list-item>Sábado</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngFor="let item of csabado;let i=index">
+        <button mat-stroked-button color="warn" (click)="horaClick(item,6,'sabado',i)"
+          [ngClass]="{'active' : this.tsabado[i], 'inactive' : !this.tsabado[i]}">
+          {{item}}
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+
+    <mat-list>
+      <mat-list-item>Domingo</mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngFor="let item of cdomingo;let i=index">
+        <button mat-stroked-button color="warn" (click)="horaClick(item,7,'domingo',i)"
+          [ngClass]="{'active' : this.tdomingo[i], 'inactive' : !this.tdomingo[i]}">
+          {{item}}
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-grid-tile>
+  <mat-grid-tile>
+    <mat-list>
+      <mat-list-item>
+        <h5>Clases Faltanes <span class="badge badge-secondary">{{data.sesiones}}</span></h5>
+      </mat-list-item>
+      <mat-list-item>
+
+        <div #paypal></div>
+      </mat-list-item>
+    </mat-list>
+
+  </mat-grid-tile>
+</mat-grid-list>

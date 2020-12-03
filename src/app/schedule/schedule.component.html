@@ -1,0 +1,149 @@
+
+<div class="register">
+  <button mat-flat-button class="mt-5" class="btn btn-info btn-block" (click)="save()"
+  style="width: 197px;  ">Guardar Cambios</button>
+  <mat-grid-list cols="7" rowHeight="1:9"  (window:resize)="onResize($event)">
+
+    <mat-grid-tile>
+
+      <mat-list >
+        <mat-list-item>Lunes</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngFor="let item of horas; let i = index" >
+          <span *ngIf="checkLunes(item)">
+            <button mat-raised-button color="warn" (click)="clunes.pop(item)">
+              {{item}}
+            </button>
+          </span>
+          <span *ngIf="!checkLunes(item)">
+            <button mat-stroked-button color="warn" (click)="clunes.push(item)">
+              {{item}}
+            </button>
+          </span>
+        </mat-list-item>
+      </mat-list>
+    </mat-grid-tile>
+    <mat-grid-tile>
+
+      <mat-list>
+        <mat-list-item>Martes</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngFor="let item of horas;let i=index">
+          <span *ngIf="checkMartes(item)">
+            <button mat-raised-button color="warn" (click)="cmartes.pop(item)">
+              {{item}}
+            </button>
+          </span>
+          <span *ngIf="!checkMartes(item)">
+            <button mat-stroked-button color="warn" (click)="cmartes.push(item)">
+              {{item}}
+            </button>
+          </span>
+        </mat-list-item>
+      </mat-list>
+    </mat-grid-tile>
+    <mat-grid-tile>
+
+      <mat-list>
+        <mat-list-item>Miercoles</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngFor="let item of horas; let i = index">
+          <span *ngIf="checkMiercoles(item)">
+            <button mat-raised-button color="warn" (click)="cmiercoles.pop(item)">
+              {{item}}
+            </button>
+          </span>
+          <span *ngIf="!checkMiercoles(item)">
+            <button mat-stroked-button color="warn" (click)="cmiercoles.push(item)">
+              {{item}}
+            </button>
+          </span>
+        </mat-list-item>
+
+      </mat-list>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+
+      <mat-list>
+        <mat-list-item>Jueves</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngFor="let item of horas; let i = index">
+          <span *ngIf="checkJueves(item)">
+            <button mat-raised-button color="warn" (click)="cjueves.pop(item)">
+              {{item}}
+            </button>
+          </span>
+          <span *ngIf="!checkJueves(item)">
+            <button mat-stroked-button color="warn" (click)="cjueves.push(item)">
+              {{item}}
+            </button>
+          </span>
+        </mat-list-item>
+      </mat-list>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+
+      <mat-list>
+        <mat-list-item>Viernes</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngFor="let item of horas; let i = index">
+          <span *ngIf="checkViernes(item)">
+            <button mat-raised-button color="warn" (click)="cviernes.pop(item)">
+              {{item}}
+            </button>
+          </span>
+          <span *ngIf="!checkViernes(item)">
+            <button mat-stroked-button color="warn" (click)="cviernes.push(item)">
+              {{item}}
+            </button>
+          </span>
+        </mat-list-item>
+      </mat-list>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+
+      <mat-list>
+        <mat-list-item>Sábado</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngFor="let item of horas; let i = index">
+          <span *ngIf="checkSabado(item)">
+            <button mat-raised-button color="warn" (click)="csabado.pop(item)">
+              {{item}}
+            </button>
+          </span>
+          <span *ngIf="!checkSabado(item)">
+            <button mat-stroked-button color="warn" (click)="csabado.push(item)">
+              {{item}}
+            </button>
+          </span>
+        </mat-list-item>
+      </mat-list>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+
+      <mat-list>
+        <mat-list-item>Domingo</mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngFor="let item of horas; let i = index">
+          <span *ngIf="checkDomingo(item)">
+            <button mat-raised-button color="warn" (click)="cdomingo.pop(item)">
+              {{item}}
+            </button>
+          </span>
+          <span *ngIf="!checkDomingo(item)">
+            <button mat-stroked-button color="warn" (click)="cdomingo.push(item)">
+              {{item}}
+            </button>
+          </span>
+        </mat-list-item>
+      </mat-list>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+
+</div>
+

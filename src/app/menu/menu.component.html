@@ -1,0 +1,90 @@
+<link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap" rel="stylesheet">
+<!--mat-grid-list [cols]="breakpoint" (window:resize)="onResize($event)">
+    <mat-grid-tile class="barra">
+        <div>
+            <div class="title">Tus Asesorias</div>
+            <br><br><br><br><br><br><br>
+            <div class="bullet">→ Toma cursos personalizados</div>
+            <br><br>
+            <div class="bullet">→ Comparte tus conocimientos</div>
+            <br><br>
+            <div class="bullet">→ Conectate con la comunidad</div>
+            <br><br><br><br><br><br><br><br><br>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile class="menu">
+        <div *ngIf="opcion==2">
+            <app-login></app-login>
+            <div class>
+                ¿No tienes una cuenta?
+                <a href="#" (click)="change(3)"> Registrate.</a>
+                <br><br><br><br>
+            </div>
+        </div>
+
+        <div *ngIf="opcion==3">
+            <div class>
+                ¿Ya tienes una cuenta?
+                <a href="#" (click)="change(2)"> Inicia sesión.</a>
+            </div>
+            <div>
+                <mat-tab-group mat-align-tabs="center">
+
+                    <mat-tab label="Registrarme como alumno">
+                        <app-signin tipoU="alumno"></app-signin>
+                    </mat-tab>
+                    <mat-tab label="Registrarme como instructor ">
+                        <app-signin tipoU="instructor"></app-signin>
+                    </mat-tab>
+                </mat-tab-group>
+
+            </div>
+            <br><br><br><br><br>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list-->
+
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlexFill fxFill style="height: 100%"> 
+    <div class="barra" fxFlex="50%" fxFlex.sm fxFlex.xs fxFill>
+        <div style="margin:auto; display:block; width:75%; margin-top:20%;margin-bottom: 10%;">
+            <div class="title">Tus Asesorias</div>
+            
+            <div class="bullet"><mat-icon style="margin-right: 20px;">school</mat-icon><strong> Toma cursos personalizados</strong></div>
+            
+            <div class="bullet"><mat-icon style="margin-right: 20px;">book</mat-icon><strong> Comparte tus conocimientos</strong></div>
+            
+            <div class="bullet"><mat-icon style="margin-right: 20px;">group</mat-icon><strong> Conectate con la comunidad</strong></div>
+        
+        </div>
+            
+    </div>
+    <div class="menu" fxFlex="50%" fxFlex.sm fxFlex.xs fxFill>
+        <div *ngIf="opcion==2" style="width:75%; margin:auto; margin-top:30%;">
+            <app-login></app-login>
+            <div style="margin:auto; margin-top:5%; width:75%; text-align: center;">
+                ¿No tienes una cuenta?
+                <a href="#" (click)="change(3)"> Registrate.</a>
+                
+            </div>
+        </div>
+        <div *ngIf="opcion==3" style="width:75%; margin:auto; margin-top:10%;">
+            <div style="margin:auto; margin-top:5%; width:75%; text-align: center;">
+                ¿Ya tienes una cuenta?
+                <a href="#" (click)="change(2)"> Inicia sesión.</a>
+            </div>
+            <div>
+                <mat-tab-group mat-align-tabs="center">
+
+                    <mat-tab label="Registrarme como alumno">
+                        <app-signin tipoU="alumno"></app-signin>
+                    </mat-tab>
+                    <mat-tab label="Registrarme como instructor ">
+                        <app-signin tipoU="instructor"></app-signin>
+                    </mat-tab>
+                </mat-tab-group>
+
+            </div>
+            
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div *ngIf="user; else verMenu">
+  <app-header></app-header>
+  <div *ngIf="url=='/'" class="start">
+    TusAsesorias es un sitio web que se encarga de otorgar una plataforma educativa a individuos con experiencia o
+    habilidades en determinadas áreas, dispuestos a generar ingresos a cambio de su pedagogía.
+    <br><br>
+    Así mismo, brinda una herramienta de aprendizaje para aquellos que deseen generar experiencia en las asignaturas de
+    su preferencia.
+  </div>
+
+  <router-outlet style="background-color: #00e2ff;" ></router-outlet>
+</div>
+
+
+<ng-template #verMenu>
+  <app-menu></app-menu>
+</ng-template>

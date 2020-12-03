@@ -1,0 +1,25 @@
+.navbar-custom {
+    background-color: #DD6031;
+    font-family: 'Marcellus SC', serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.144);
+    border-radius: 0;
+    height: 59px;
+}
+
+
+*:before, *:after{
+    content: normal !important;
+}
+
+.active{
+    
+    /*color:white;*/
+    
+    
+    font-weight: bold;
+    box-shadow: 0 4px 2px -2px rgba(255, 254, 254, 0.89);
+}
+
+.spacer {
+    flex: 1 1 auto;
+  }

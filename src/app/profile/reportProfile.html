@@ -1,0 +1,8 @@
+<h1>Motivo del reporte</h1>
+<form action="" [formGroup]="formReporte">
+<div class="form-group">
+    <textarea class="form-control rounded-0" id="exampleFormControlTextarea2"  formControlName="reporte" rows="3"
+      ></textarea>
+  </div>
+<button mat-flat-button color="warn" (click)="saveReport()" [disabled]="formReporte.invalid">Enviar</button>
+</form>

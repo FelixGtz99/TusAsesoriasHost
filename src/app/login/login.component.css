@@ -1,0 +1,30 @@
+mat-form-field {
+   display: block;
+   width: 327px;
+ }
+.main-div{
+    /*height: 1000px;
+    width: 1000px;
+    */display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #dcf3f8;
+   
+  }
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.button {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%
+}

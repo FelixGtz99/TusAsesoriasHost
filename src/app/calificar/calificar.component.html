@@ -1,0 +1,142 @@
+<div class="main-div container">
+
+        <div class="center">
+                <h1 align="center">¿Como ha sido tu experiencia en el curso?</h1>
+                <br> <br>
+
+                <ngb-rating [(rate)]="currentRate" [max]=5 style="font-size: 3rem ; outline:none" ></ngb-rating>
+
+                <!--<p>Rate: {{currentRate}}</p>-->
+                <div *ngIf="currentRate==1">Mala<br><br>
+                        <h2>¿Por qué razones no te sientes satisfecho con el instructor? (Seleccionar max. tres).</h2>
+                </div>
+                <div *ngIf="currentRate==2">Deficiente<br><br>
+                        <h2>¿Qué aspectos del instructor no fueron de tu agrado? (Seleccionar max. tres).</h2>
+                </div>
+                <div *ngIf="currentRate==3">Suficiente<br><br>
+                        <h2>¿Qué características de tu instructor crees que dificultaron tu experiencia? (Seleccionar
+                                max. tres).
+                        </h2>
+                </div>
+                <div *ngIf="currentRate==4">Muy buena<br><br>
+                        <h2>¿Qué atributos de tu aprendizaje con el instructor piensas que pudieron haber sido mejores?
+                                (Seleccionar
+                                max. tres).</h2>
+                </div>
+                <div *ngIf="currentRate==5">Excelente<br><br>
+                        <h2>¿Qué aspectos de tu experiencia con el instructor consideras fueron los más destacables?
+                                (Seleccionar
+                                max. tres).</h2>
+                </div>
+
+
+                <!--<h3 align="center">Escoge un maximo de 3 adjetivos que ilustren de mejor forma la experiencia</h3>-->
+                <br> <br>
+                <div *ngIf="currentRate==1 || currentRate==2 || currentRate==3">
+
+                        <button (click)="saveAdjetivo('Inasistencia')" style="outline:none"> <a class="button"
+                                        style="text-decoration: none;" target=”_blank” >Inasistencia
+                                </a></button>
+                        <button (click)="saveAdjetivo('Dificultades técnicas')"
+                                style="outline:none ; margin-left: 20px"><a class="button"
+                                        style="text-decoration: none;" target=”_blank”>Dificultades
+                                        técnicas</a></button>
+                        <button (click)="saveAdjetivo('No domina el tema')" style="outline:none ; margin-left: 20px"><a
+                                        class="button" style="text-decoration: none;" target=”_blank”>No domina el
+                                        tema</a></button>
+                        <button (click)="saveAdjetivo('No sabe enseñar')" style="outline:none; margin-left: 20px"><a
+                                        class="button" style="text-decoration: none;" target=”_blank”>No sabe
+                                        enseñar</a></button>
+                        <button (click)="saveAdjetivo('Vocabulario incadecuado')"
+                                style="outline:none; margin-left: 20px"><a class="button" style="text-decoration: none;"
+                                        target=”_blank”>Vocabulario incadecuado</a></button>
+                        <div><br>
+                                <button (click)="saveAdjetivo('Comportamiento inapropiado')"
+                                        style="outline:none ; margin-left: 20px"><a class="button"
+                                                style="text-decoration: none;" target=”_blank”>Comportamiento
+                                                inapropiado</a></button>
+                                <button (click)="saveAdjetivo('Inquietud/Impaciencia')"
+                                        style="outline:none; margin-left: 20px"><a class="button"
+                                                style="text-decoration: none;"
+                                                target=”_blank”>Inquietud/Impaciencia</a></button>
+                                <button (click)="saveAdjetivo('Contenido falso')"
+                                        style="outline:none; margin-left: 20px"><a class="button"
+                                                style="text-decoration: none;" target=”_blank”>Contenido
+                                                falso</a></button>
+                                <button (click)="saveAdjetivo('Falta de expresión')"
+                                        style="outline:none; margin-left: 20px"><a class="button"
+                                                style="text-decoration: none;" target=”_blank”>Falta de
+                                                expresión</a></button>
+                        </div>
+                </div>
+                <div *ngIf="currentRate==4">
+                        <button (click)="saveAdjetivo('Asistencia')" style="outline:none; margin-left: 20px"><a
+                                        class="button" style="text-decoration: none;" target=”_blank”>Asistencia
+                                </a></button>
+                        <button (click)="saveAdjetivo('Calidad de video/audio')"
+                                style="outline:none; margin-left: 20px"><a class="button" style="text-decoration: none;"
+                                        target=”_blank”>Calidad de video/audio</a></button>
+                        <button (click)="saveAdjetivo('Dominio del contenido')"
+                                style="outline:none; margin-left: 20px"><a class="button" style="text-decoration: none;"
+                                        target=”_blank”>Dominio del contenido</a></button>
+                        <button (click)="saveAdjetivo('Habilidad de la enseñanza')"
+                                style="outline:none ;margin-left: 20px"><a class="button" style="text-decoration: none;"
+                                        target=”_blank”>Habilidad de la enseñanza</a></button>
+                        <div><br>
+                                <button (click)="saveAdjetivo('Empeño/Esfuerzo')"
+                                        style="outline:none; margin-left: 20px"><a class="button"
+                                                style="text-decoration: none;"
+                                                target=”_blank”>Empeño/Esfuerzo</a></button>
+                                <button (click)="saveAdjetivo('Índole de contenido')"
+                                        style="outline:none; margin-left: 20px"><a class="button"
+                                                style="text-decoration: none;" target=”_blank”>Índole de
+                                                contenido</a></button>
+                                <button (click)="saveAdjetivo('Expresión y Dicción')"
+                                        style="outline:none ;margin-left: 20px"><a class="button"
+                                                style="text-decoration: none;" target=”_blank”>Expresión y
+                                                Dicción</a></button>
+                        </div>
+                </div>
+                <div *ngIf="currentRate==5">
+                        <button (click)="saveAdjetivo('Asistencia')" style="outline:none; margin-left: 20px"><a
+                                        class="button" style="text-decoration: none;" target=”_blank”>Asistencia
+                                </a></button>
+                        <button (click)="saveAdjetivo('Calidad de video/audio')"
+                                style="outline:none; margin-left: 20px"><a class="button" style="text-decoration: none;"
+                                        target=”_blank”>Calidad de video/audio</a></button>
+                        <button (click)="saveAdjetivo('Dominio del contenido')"
+                                style="outline:none; margin-left: 20px"><a class="button" style="text-decoration: none;"
+                                        target=”_blank”>Dominio del contenido</a></button>
+                        <button (click)="saveAdjetivo('Habilidad de la enseñanza')"
+                                style="outline:none;margin-left: 20px"><a class="button" style="text-decoration: none;"
+                                        target=”_blank”>Habilidad de la enseñanza</a></button>
+                        <button (click)="saveAdjetivo('Perseverancia')" style="outline:none;margin-left: 20px"><a
+                                        class="button" style="text-decoration: none;"
+                                        target=”_blank”>Perseverancia</a></button>
+                        <div><br>
+                                <button (click)="saveAdjetivo('Tenacidad')" style="outline:none;margin-left: 20px"><a
+                                                class="button" style="text-decoration: none;"
+                                                target=”_blank”>Tenacidad</a></button>
+                                <button (click)="saveAdjetivo('Calidad de contenido')"
+                                        style="outline:none;margin-left: 20px"><a class="button"
+                                                style="text-decoration: none;" target=”_blank”>Calidad de
+                                                contenido</a></button>
+                                <button (click)="saveAdjetivo('Expresión y Dicción')"
+                                        style="outline:none;margin-left: 20px"><a class="button"
+                                                style="text-decoration: none;" target=”_blank”>Expresión y
+                                                Dicción</a></button>
+                                <button (click)="saveAdjetivo('Conocimiento adquirido')"
+                                        style="outline:none;margin-left: 20px"><a class="button"
+                                                style="text-decoration: none;" target=”_blank”>Conocimiento
+                                                adquirido</a></button>
+                        </div>
+                </div>
+
+        </div>
+        <br><br><br>
+        <div align="right" *ngIf="currentRate!=0">
+                <button mat-raised-button color="warn" (click)="saveEvaluacion()" style="width: 150px;">Guardar</button>
+        </div>
+
+
+        <div class="main-div container"></div>

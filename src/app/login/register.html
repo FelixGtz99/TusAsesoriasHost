@@ -1,0 +1,57 @@
+<!-- <h1 mat-dialog-title>Nuevo Usuario </h1>
+<div mat-dialog-content color="accent">
+ <form action="" [formGroup]="formUsuario">
+  <mat-form-field >
+    <mat-label>¿Cual es su nombre?</mat-label>
+    <input matInput placeholder="Nombre" formControlName="nombre">
+   
+    <mat-error *ngIf="formUsuario.controls['nombre'].invalid ">El nombre es obligatorio</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label >¿Cual es su apellido?</mat-label>
+    <input matInput formControlName="apellido" placeholder="Apellido">
+       
+    <mat-error *ngIf="formUsuario.controls['apellido'].invalid">El apellido es obligatorio</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>¿Cual es su experiente?</mat-label>
+    <input matInput formControlName="expediente" placeholder="Experiente">
+    <mat-error *ngIf="formUsuario.controls['expediente'].invalid" > 
+      <span *ngIf="formUsuario.controls['expediente'].errors.required">El experiente es obligatorio</span>
+      <span *ngIf="formUsuario.controls['expediente'].errors.pattern">Solo pueden ser numeros </span>
+   
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>¿Que carrera estudia?</mat-label>
+   <mat-select formControlName="carrera">
+     <mat-option *ngFor="let carrera of carreras" [value]="carrera.id">{{carrera.nombre}}</mat-option>
+     
+   </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>¿Cual es su correo?</mat-label>
+    <input formControlName="correo" matInput type="email" placeholder="ejemplo@correo.com">
+    <mat-error *ngIf="formUsuario.controls['correo'].invalid" > 
+      <span *ngIf="formUsuario.controls['correo'].errors.required">El correo es obligatorio</span>
+      <span *ngIf="formUsuario.controls['correo'].errors.email">Formato no valido </span>
+    
+    </mat-error>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>¿Cual es su contraseña?</mat-label>
+    <input formControlName="contraseña" matInput type="password" placeholder="Contraseña">
+    <mat-hint>Debe tener minimo 8 caracteres</mat-hint>
+    <mat-error *ngIf="formUsuario.controls['contraseña'].invalid" > 
+      <span *ngIf="formUsuario.controls['contraseña'].errors.required">La contraseña es obligatoria</span>
+      <span *ngIf="formUsuario.controls['contraseña'].errors.minlength"> Debe tener minimo 8 caracteres</span>
+    
+    </mat-error>
+  </mat-form-field>
+</form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancelar</button>
+  <button mat-button [disabled]="formUsuario.invalid" (click)="signup()" color="accent" cdkFocusInitial>Guardar</button>
+</div> -->

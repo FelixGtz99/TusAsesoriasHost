@@ -1,0 +1,51 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<div>
+
+  <form [formGroup]="formCursos" style=" height: 445px; width: 400px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); background:white;">
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+
+    <h2>CREAR ASESORIA</h2>
+    <mat-form-field appearance="fill">
+      <mat-label>Categoria</mat-label>
+      <mat-select formControlName="categoria">
+        <mat-option value="option" *ngFor="let c of categorias" [value]="c">{{c.nombre}}</mat-option>
+      </mat-select>
+      <mat-error>Selecciona una opción.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Nivel Académico</mat-label>
+      <mat-select formControlName="nivel">
+        <mat-option value="option" *ngFor="let n of niveles" [value]="n">{{n.nombre}}</mat-option> 
+      </mat-select>
+      <mat-error>Selecciona una opción.</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Etiquetas separadas por comas</mat-label>
+      <mat-chip-list #chipList aria-label="Etiquetas" formArrayName="etiquetas">
+        <mat-chip *ngFor="let tag of etiquetas" [selectable]="true" [removable]="true"
+          (removed)="removeTag(tag, formCursos)">
+          {{tag}}
+          <mat-icon matChipRemove *ngIf="true">cancel</mat-icon>
+        </mat-chip>
+        <input [placeholder]="disabled ? 'No puedes añadir más etiquetas': 'Nueva etiqueta'"
+          [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          [matChipInputAddOnBlur]="true" (matChipInputTokenEnd)="addTag($event, formCursos)"
+          [attr.disabled]="disabled ? '': null" autocomplete="off">
+      </mat-chip-list>
+      <mat-error>Introduce al menos 1 etiqueta.</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" style="margin-top: 9px;">
+      <mat-label>Tarifa</mat-label>
+      <input matInput formControlName="tarifa" type="number" min="0" max="2000" oninput="validity.valid||(value='0');">
+      <mat-error>Introduce un valor entre 0 y 2000.</mat-error>
+    </mat-form-field>
+    <h4 style="margin-left: 41px; font-size: 13px;">*Tarifa máxima de $2000.00 MXN por hora</h4>
+    <br>
+    <button mat-raised-button (click)="setCourse()" [disabled]="formCursos.invalid" class="validated"
+      style="font-size: 17px; margin-top: 1px; margin-left: 127px; width: 150px; ">PUBLICAR</button>
+  </form>
+
+
+</div>

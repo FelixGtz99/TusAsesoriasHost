@@ -1,0 +1,35 @@
+
+<div class="containter  main-div">
+    <form [formGroup]="formLogin">
+        <mat-form-field class="full-width">
+            <mat-label>Correo Electrónico</mat-label>
+            <input type="email" matInput placeholder="Ingrese su correo electrónico" name="email"
+                formControlName="correo">
+            <mat-error *ngIf="formLogin.controls['correo'].invalid">
+                <span *ngIf="formLogin.controls['correo'].errors.required && formLogin.dirty">El correo es
+                    obligatorio</span>
+                <span *ngIf="formLogin.controls['correo'].errors.email && formLogin.dirty">No es un correo válido</span>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="full-width">
+            <mat-label>Contraseña</mat-label>
+            <input type="password" matInput placeholder="Ingrese su contraseña" name="password"
+                formControlName="contraseña">
+            <mat-error *ngIf="formLogin.controls['contraseña'].invalid">
+                <span *ngIf="formLogin.controls['contraseña'].errors.required && formLogin.dirty">La contraseña es
+                    obligatoria</span>
+
+
+            </mat-error>
+        </mat-form-field>
+        <div class="container">
+            <button mat-flat-button (click)="logIn()" class="button" style="font-size: 17px;">Iniciar Sesión</button>
+            <button mat-flat-button (click)="authService.GoogleAuth()" class="button" style="font-size: 17px;"><img
+                    src="https://img.icons8.com/color/23/000000/google-logo.png" />
+                Ingresar con Google
+            </button>
+
+        </div>
+    </form>
+
+</div>

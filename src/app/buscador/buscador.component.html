@@ -1,0 +1,140 @@
+<div>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap" rel="stylesheet">
+    <h1><i class="material-icons">find_in_page</i>BUSCAR ASESORÍA</h1>
+      
+ </div>
+    <div class= "searcher" style="text-align: center;">
+
+        <input  [(ngModel)]="filter" name="filter" class="form-control" type="text" placeholder= " Escribe nombre de instructor o etiqueta" style="width: 500px;" autofocus>
+ 
+        <button mat-flat-button class="mt-5" class="btn btn-info btn-block" style="width: 187px; text-align: center; height: 6vh;" (click)= "filtrarCategoria=!filtrarCategoria"><i class="material-icons" style="font-size: 130%;" >filter_alt</i> Filtrar categorías</button>
+
+    </div>      
+    
+    <div class="custom-control custom-checkbox" style="text-align: center;" *ngIf= "filtrarCategoria">
+        <div class="custom-checkbox" style="display: inline-block;">
+            <input type="checkbox" class="custom-control-input" id="catTodas" (change)="isDisabled=!isDisabled" (click)="getAll()">
+            <label for="catTodas" class="custom-control-label">Todas</label>
+        </div>
+        
+        <div class="custom-checkbox" >
+        <input [disabled]="isDisabled" type="checkbox" class="custom-control-input" id="catIdiomas"  (change)="getCategoriesId($event,'Idioma')">
+        <label for="catIdiomas" class="custom-control-label">Idiomas</label>
+        </div>
+        <div class="custom-checkbox">
+        <input [disabled]="isDisabled" type="checkbox" class="custom-control-input" id="catExactas" (change)="getCategoriesId($event,'Ciencias Exactas')">
+        <label for="catExactas" class="custom-control-label"  >Ciencias Exactas</label>
+        </div>
+        <div class="custom-checkbox">
+        <input [disabled]="isDisabled" type="checkbox" class="custom-control-input" id="catInformatica" (change)="getCategoriesId($event,'Informatica')">
+        <label for="catInformatica" class="custom-control-label"  >Informática</label>
+        </div>    
+        <div class="custom-checkbox">
+        <input [disabled]="isDisabled" type="checkbox" class="custom-control-input" id="catSociales" (change)="getCategoriesId($event,'Ciencias Sociales')">
+        <label for="catSociales" class="custom-control-label" >Ciencias Sociales</label>
+        </div>
+        <div class="custom-checkbox">
+        <input [disabled]="isDisabled" type="checkbox" class="custom-control-input" id="catNaturales" (change)="getCategoriesId($event,'Ciencias Naturales')">
+        <label for="catNaturales" class="custom-control-label" >Ciencias Naturales</label>
+        </div>    
+        <br>
+        <br>
+        <div class="custom-checkbox2">
+        <input [disabled]="isDisabled" type="checkbox" class="custom-control-input" id="catHogar" (change)="getCategoriesId($event,'Cosas Del Hogar')">
+        <label for="catHogar" class="custom-control-label" >Cosas del Hogar</label>
+        </div>
+        <div class="custom-checkbox2">
+        <input [disabled]="isDisabled" type="checkbox" class="custom-control-input" id="catElectro" (change)="getCategoriesId($event,'Electronica y Mecanica')">
+        <label for="catElectro" class="custom-control-label" >Electrónica y Mecánica</label>
+        </div>
+        <div class="custom-checkbox2">
+        <input [disabled]="isDisabled" type="checkbox" class="custom-control-input" id="catArte" (change)="getCategoriesId($event,'Arte')">
+        <label for="catArte" class="custom-control-label" >Arte</label>
+        </div>
+        <div class="custom-checkbox2">
+        <input [disabled]="isDisabled" type="checkbox" class="custom-control-input" id="catManual"(change)="getCategoriesId($event,'Manualidades')">
+        <label for="catManual" class="custom-control-label"  >Manualidades</label>
+        </div>
+</div>
+<!--
+<div>
+    <select [(ngModel)]='CategoriaSelected' (ngModelChange)='onCategoriaSelected($event)'>
+        <option *ngFor='let curso of Cursos' [value]="curso.id">
+            {{curso.categoria}}
+        </option>
+        </select>
+</div>
+-->
+<!-- <div *ngFor='let categoria of categorias' >
+   <input type="checkbox" name="{{categoria.nombre}}" [(ngModel)]="categoria.checked" value="categoria.nombre" (change)="getCategoriesId($event,categoria.nombre)" > {{categoria.nombre}}
+</div> -->
+
+ <div class='container mt-5'> 
+      <div>
+                
+        
+        <div class="row" >
+            <div class="col-sm-3" *ngFor="let curso of cursosChecked| bmaestro:filter" style="padding-top: 3%;">
+                <div class="card"  >
+                    <img class="card-img-top imgMaestro" [src]="curso.user.img">
+                    <mat-card class="card-body">
+                        <mat-card-content>
+                            <h5 class="card-title" style="font-size: 21px;">{{curso.user.nombre}} </h5>
+                        <h5 class="card-title">{{curso.categoria.nombre}} </h5>
+                        <!--h5 class="card-title">{{curso.nivel.nombre}}</h5-->
+                        <h5 class="card-title">{{curso.tarifa | currency}} </h5>
+                        <ngb-rating [(rate)]="curso.evaluaciones" [readonly]="true" [max]=5 style="font-size: 1rem">
+                        </ngb-rating>
+                        
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button class="btn btn-primary" [routerLink]="['/perfil', curso.user.uid ]">
+                                Ver Perfil
+                            </button>
+                            <button *ngIf="usuario.tipoUsuario==alumno" class="btn btn-primary" [routerLink]="['/agendar', curso.id ]">
+                                Ver Curso
+                            </button>
+    
+                        </mat-card-actions>
+                        
+                    </mat-card>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- segmento ppara reallizar busqueda por categoria -->
+<ng-template #Categoria>
+
+    <form action="">
+        <div class="form-group">
+            <input [(ngModel)]="filter" name="filter" class="form-control" type="text"
+                placeholder="Busque una categoria" style="width: 400px;">
+        </div>
+    </form>
+
+    <div class="row">
+        <div class="col-sm-3" *ngFor="let curso of cursos | bcategoria:filtrar">
+            <div class="card">
+                <img class="card-img-top imgMaestro" [src]="curso.user.img">
+                <div class="card-body">
+
+                    <h5 class="card-title" style="font-size: 21px;">{{curso.user.nombre}} </h5>
+                    <h5 class="card-title">{{curso.categoria.nombre}} </h5>
+                    <h5 class="card-title">{{curso.tarifa}} </h5>
+                    <button class="btn btn-primary" [routerLink]="['/perfil', curso.user.uid ]">
+                        Ver Perfil
+                    </button>
+                    <span *ngIf="usuario.tipoUsuario==alumno">
+                    <button class="btn btn-primary"  [routerLink]="['/agendar', curso.id ]">
+                        Ver Curso
+                    </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</ng-template>

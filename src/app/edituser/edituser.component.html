@@ -1,0 +1,78 @@
+<!--Rotating card-->
+<div class="col-md-4">
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+  <form class="text-center border border-light p-5"
+    style="height: 470px; box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19); background-color: rgb(243, 243, 243);"
+    action="#!">
+    <mdb-flipping-card #cards>
+      <!--Front Side-->
+      <div class="face front tp-box_side tp-box_front">
+
+        <div class="profile-img" style="margin-left: 67px;">
+          <img [src]="usuario.img" alt="unplash">
+        </div>
+
+        <!--Content-->
+        <div class="card-body">
+          <h1 style="margin-bottom: 1px;">{{usuario.nombre}}</h1>
+          <h2 style="margin-bottom: 1px;">{{usuario.tipoUsuario}}</h2>
+
+          <!--Triggering button-->
+        </div>
+      </div>
+      <!--Back Side-->
+      <div class="back tp-box_side tp-box_back">
+
+        <!--DESCRIPCION-->
+        <h4>{{usuario.correo}}</h4>
+       
+        <hr>
+      </div>
+      <button class="mt-5" style="background-color: rgb(238, 131, 43); margin-top: 25px;" class="btn btn-info btn-block"
+        (click)="editProfile=!editProfile">EDITAR PERFIL</button>
+      <!--/.Back Side-->
+    </mdb-flipping-card>
+  </form>
+</div>
+<!--/.Rotating card-->
+
+
+<div class="main-div">
+  <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi&display=swap" rel="stylesheet">
+
+  <form style="margin-top:40px" *ngIf="editProfile" [formGroup]="formUsuario"
+    class="text-center border border-light p-5" action="#!">
+
+
+    <p class="h4 mb-4">EDITAR MIS DATOS</p>
+
+    <input (click)="editCorreo=!editCorreo" type="email" id="defaultContactFormEmail" class="form-control mb-4"
+      placeholder="E-mail" name="email" formControlName="correo"  *ngIf="tipoCorreo!='gmail.com'">
+
+
+    <input (click)="editContra=!editContra" type="password" id="defaultContactFormName"   *ngIf="tipoCorreo!='gmail.com'"class="form-control mb-4"
+      placeholder="Contraseña" name="password" formControlName="contraseña">
+   
+
+
+    <button color="primary" (click)="editImg=!editImg"
+      style=" background-color: rgb(77, 65, 61); margin-bottom: 21px; width: 50px; height: 40px;"
+      class="btn btn-info btn-block" type="submit"><i class="material-icons">camera_enhance</i></button>
+    <input formControlName="img" (change)="addImg($event)" type="file" class="form-control-file" *ngIf="editImg">
+
+
+
+
+    <div class="form-group">
+      <textarea class="form-control rounded-0" formControlName="bio"  id="exampleFormControlTextarea2" rows="3"  *ngIf="usuario.tipoUsuario=='instructor'"
+        placeholder="Biografia">
+
+      </textarea>
+    </div>
+
+
+    <button class="mt-5" (click)="editUser()" class="btn btn-info btn-block" type="submit">GUARDAR CAMBIOS</button>
+
+  </form>
+</div>

@@ -1,0 +1,50 @@
+main {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+  }
+  
+  .button {
+    background-color:#2d8cff;
+    color: #ffffff;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: inline-block;
+    border-radius: 5px;
+    outline:none;
+    border: 0;
+    box-shadow: 2px 2px 5px #999;
+    /*font-size: 16px*/
+
+  }
+  /*button.change {
+    outline: none;
+    
+  }*/
+  ngb-rating {
+    font-size: 100px;
+    color:#f4ac08;
+    
+    
+  }
+  .button:hover {
+    background-color:  #2777da;
+  }
+  div.center{
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  button:active,.active{
+    outline: none;
+    background-color:  #2777da;
+
+  }
+  
+  button :focus{
+    outline-style: none; 
+  }
+

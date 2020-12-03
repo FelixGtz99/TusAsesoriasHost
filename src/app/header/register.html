@@ -1,0 +1,7 @@
+<h1 mat-dialog-title>Nuevo Usuario </h1>
+<div mat-dialog-content color="accent">
+  <form action="" [formGroup]="formUsuarioNuevo">
+    <button mat-button (click)="addUsuario('alumno')" color="accent" cdkFocusInitial>Soy alumno</button>
+    <button mat-button (click)="addUsuario('intructor')" color="accent" cdkFocusInitial>Soy intructor</button>
+  </form>
+</div>
